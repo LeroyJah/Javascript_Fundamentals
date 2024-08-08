@@ -35,12 +35,10 @@ echo "<br>";
 <body>
 
 <input type="text" id="pokemonName" placeholder="Enter Pokemon name">
-<!--<button onclick="getStats(apiObject);statBar(apiObject)">Fetch Stats v2</button>-->
 <button onclick="fetchPokemon();"> fetch Pokemon</button>
-<!--<button onclick="updateObject(objectArray);">Current Object</button>-->
 <button onclick="prevObject(objectArray);"> Prev Pokemon</button>
 <button onclick="nextObject(objectArray);"> Next Pokemon</button>
-<!--<button onclick="displayArrayIndex();">Current Array Index</button>-->
+<button onclick="addBug()"> Add Bug</button>
 
 <br>
 <div>
@@ -314,6 +312,9 @@ echo "<br>";
     // switch{
     //
     // }
+    function addBug(){
+        typeImage1.src = 'Types/Bug.png';
+    }
 </script>
 
 </body>
