@@ -110,7 +110,7 @@ echo "<br>";
     <div id="pokemonType1" style="display: inline-block ;text-align: center; width: 100px; height: 20px; margin: 5px">
         <img id="typeImage1" src="" alt="">
     </div>
-    <div id="pokemonType2" style="display: none ;float: right ;text-align: center; width: 100px; height: 20px; border-style: solid; border-width: 1px; margin: 5px">
+    <div id="pokemonType2" style="display: none ;float: right ;text-align: center; width: 100px; height: 20px; margin: 5px">
         <img id="typeImage2" src="" alt="">
     </div>
 </div>
@@ -297,6 +297,7 @@ echo "<br>";
         typeSelector1(type1);
 
         if(data.types[1]) {
+            pokemonType2.style.display = "inline-block";
             var type2 = data.types[1].type.name
             typeSelector2(type2);
             console.log(type2);
@@ -341,7 +342,7 @@ echo "<br>";
                 typeImage1.src = 'Types/Psychic.png';
                 break;
             case data = "poison":
-                typeImage1.src = 'Types/.Poison.png';
+                typeImage1.src = 'Types/Poison.png';
                 break;
             case data = "ghost":
                 typeImage1.src = 'Types/Ghost.png';
@@ -397,7 +398,7 @@ echo "<br>";
                 typeImage2.src = 'Types/Psychic.png';
                 break;
             case data = "poison":
-                typeImage2.src = 'Types/.Poison.png';
+                typeImage2.src = 'Types/Poison.png';
                 break;
             case data = "ghost":
                 typeImage2.src = 'Types/Ghost.png';
@@ -415,6 +416,11 @@ echo "<br>";
                 typeImage2.src = 'Types/Bug.png';
                 break;
         }
+    }
+
+    function addBug(){
+        pokemonType2.style.display = "inline-block";
+        typeImage2.src = 'Types/Bug.png';
     }
 </script>
 
