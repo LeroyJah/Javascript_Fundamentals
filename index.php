@@ -44,10 +44,15 @@ echo "<br>";
 
 <br>
 <div>
-    <img src="" alt="Pokemon Sprite" id="pokemonSprite" style="display: none">
-<!--    <div style="width: 200px; height: 20px; border-style: solid; border-width: 1px">-->
-<!---->
-<!--    </div>-->
+    <div style="display: flex; margin-top: 10px">
+        <img src="" alt="Pokemon Sprite" id="pokemonSprite" style="display: none">
+        <!--    <div style="width: 200px; height: 20px; border-style: solid; border-width: 1px">-->
+        <!---->
+        <!--    </div>-->
+        <div>
+            <a href="https://pokemonshowdown.com" target="_blank">Find me on Showdown @GlaiveVG</a>
+        </div>
+    </div>
     <table>
         <tr>
             <th id="name" colspan="2"></th>
@@ -104,7 +109,8 @@ echo "<br>";
 </div>
 <br>
 <div style="width: 250px">
-    <div id="pokemonType" style="display: inline-block ;text-align: center; width: 100px; height: 20px; border-style: solid; border-width: 1px; margin: 5px">
+    <div id="pokemonType1" style="display: inline-block ;text-align: center; width: 100px; height: 20px; border-style: solid; border-width: 1px; margin: 5px">
+        <img id="typeImage1" src="Types/Normal.png" alt="no bug yet">
     </div>
     <div id="pokemonType2" style="display: none ;float: right ;text-align: center; width: 100px; height: 20px; border-style: solid; border-width: 1px; margin: 5px">
 
@@ -184,8 +190,9 @@ echo "<br>";
 
     }
 
-    var pokemonType = document.getElementById("pokemonType");
+    var pokemonType1 = document.getElementById("pokemonType1");
     var pokemonType2 = document.getElementById("pokemonType2");
+    var typeImage1 = document.getElementById("typeImage1");
 
     function fetchPokemon(){
         const pokemonName = document.getElementById("pokemonName").value.toLowerCase();
@@ -287,15 +294,26 @@ echo "<br>";
     }
 
     async function setTypes(data) {
-        pokemonType.innerText = data.types[0].type.name
-        if(data.types[1]){
-            const secondType = data.types[1].type.name
+        console.log(data);
+        var type1 = data.types[0].type.name
+        pokemonType1.innerText = type1
+        console.log(type1);
+        if(type1 === "bug"){
+            typeImage1.src = 'Types/Bug.png';
+            console.log("Bug here");
+        }
+        if(data.types[1]) {
+            var secondType = data.types[1].type.name
             pokemonType2.style.display = "inline-block";
             pokemonType2.innerText = secondType
         }else{
             pokemonType2.style.display = "none";
         }
     }
+    //
+    // switch{
+    //
+    // }
 </script>
 
 </body>
