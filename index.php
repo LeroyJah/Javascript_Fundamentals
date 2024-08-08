@@ -294,12 +294,9 @@ echo "<br>";
     async function setTypes(data) {
         console.log(data);
         var type1 = data.types[0].type.name
-        pokemonType1.innerText = type1
         console.log(type1);
-        if(type1 === "bug"){
-            typeImage1.src = 'Types/Bug.png';
-            console.log("Bug here");
-        }
+        typeSelector(type1);
+
         if(data.types[1]) {
             var secondType = data.types[1].type.name
             pokemonType2.style.display = "inline-block";
@@ -308,10 +305,25 @@ echo "<br>";
             pokemonType2.style.display = "none";
         }
     }
-    //
-    // switch{
-    //
-    // }
+
+    function typeSelector(data){
+        switch(data){
+            case data = "dragon":
+                typeImage1.src = 'Types/Dragon.png';
+                break;
+            case data = "fire":
+                typeImage1.src = 'Types/Fire.png';
+                break;
+            case data = "water":
+                typeImage1.src = 'Types/Water.png';
+                break;
+            case data = "ground":
+                typeImage1.src = 'Types/Ground.png';
+                break;
+
+        }
+    }
+
     function addBug(){
         typeImage1.src = 'Types/Bug.png';
     }
