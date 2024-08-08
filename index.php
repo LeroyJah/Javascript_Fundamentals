@@ -107,11 +107,11 @@ echo "<br>";
 </div>
 <br>
 <div style="width: 250px">
-    <div id="pokemonType1" style="display: inline-block ;text-align: center; width: 100px; height: 20px; border-style: solid; border-width: 1px; margin: 5px">
-        <img id="typeImage1" src="Types/Normal.png" alt="no bug yet">
+    <div id="pokemonType1" style="display: inline-block ;text-align: center; width: 100px; height: 20px; margin: 5px">
+        <img id="typeImage1" src="" alt="">
     </div>
     <div id="pokemonType2" style="display: none ;float: right ;text-align: center; width: 100px; height: 20px; border-style: solid; border-width: 1px; margin: 5px">
-
+        <img id="typeImage2" src="" alt="">
     </div>
 </div>
 
@@ -191,6 +191,7 @@ echo "<br>";
     var pokemonType1 = document.getElementById("pokemonType1");
     var pokemonType2 = document.getElementById("pokemonType2");
     var typeImage1 = document.getElementById("typeImage1");
+    var typeImage2 = document.getElementById("typeImage2");
 
     function fetchPokemon(){
         const pokemonName = document.getElementById("pokemonName").value.toLowerCase();
@@ -292,21 +293,19 @@ echo "<br>";
     }
 
     async function setTypes(data) {
-        console.log(data);
         var type1 = data.types[0].type.name
-        console.log(type1);
-        typeSelector(type1);
+        typeSelector1(type1);
 
         if(data.types[1]) {
-            var secondType = data.types[1].type.name
-            pokemonType2.style.display = "inline-block";
-            pokemonType2.innerText = secondType
+            var type2 = data.types[1].type.name
+            typeSelector2(type2);
+            console.log(type2);
         }else{
             pokemonType2.style.display = "none";
         }
     }
 
-    function typeSelector(data){
+    function typeSelector1(data){
         switch(data){
             case data = "dragon":
                 typeImage1.src = 'Types/Dragon.png';
@@ -320,12 +319,102 @@ echo "<br>";
             case data = "ground":
                 typeImage1.src = 'Types/Ground.png';
                 break;
-
+            case data = "rock":
+                typeImage1.src = 'Types/Rock.png';
+                break;
+            case data = "dark":
+                typeImage1.src = 'Types/Dark.png';
+                break;
+            case data = "fairy":
+                typeImage1.src = 'Types/Fairy.png';
+                break;
+            case data = "ice":
+                typeImage1.src = 'Types/Ice.png';
+                break;
+            case data = "grass":
+                typeImage1.src = 'Types/Grass.png';
+                break;
+            case data = "steel":
+                typeImage1.src = 'Types/Steel.png';
+                break;
+            case data = "psychic":
+                typeImage1.src = 'Types/Psychic.png';
+                break;
+            case data = "poison":
+                typeImage1.src = 'Types/.Poison.png';
+                break;
+            case data = "ghost":
+                typeImage1.src = 'Types/Ghost.png';
+                break;
+            case data = "flying":
+                typeImage1.src = 'Types/Flying.png';
+                break;
+            case data = "fighting":
+                typeImage1.src = 'Types/Fighting.png';
+                break;
+            case data = "electric":
+                typeImage1.src = 'Types/Electric.png';
+                break;
+            case data = "bug":
+                typeImage1.src = 'Types/Bug.png';
+                break;
         }
     }
 
-    function addBug(){
-        typeImage1.src = 'Types/Bug.png';
+    function typeSelector2(data) {
+        switch (data) {
+            case data = "dragon":
+                typeImage2.src = 'Types/Dragon.png';
+                break;
+            case data = "fire":
+                typeImage2.src = 'Types/Fire.png';
+                break;
+            case data = "water":
+                typeImage2.src = 'Types/Water.png';
+                break;
+            case data = "ground":
+                typeImage2.src = 'Types/Ground.png';
+                break;
+            case data = "rock":
+                typeImage2.src = 'Types/Rock.png';
+                break;
+            case data = "dark":
+                typeImage2.src = 'Types/Dark.png';
+                break;
+            case data = "fairy":
+                typeImage2.src = 'Types/Fairy.png';
+                break;
+            case data = "ice":
+                typeImage2.src = 'Types/Ice.png';
+                break;
+            case data = "grass":
+                typeImage2.src = 'Types/Grass.png';
+                break;
+            case data = "steel":
+                typeImage2.src = 'Types/Steel.png';
+                break;
+            case data = "psychic":
+                typeImage2.src = 'Types/Psychic.png';
+                break;
+            case data = "poison":
+                typeImage2.src = 'Types/.Poison.png';
+                break;
+            case data = "ghost":
+                typeImage2.src = 'Types/Ghost.png';
+                break;
+            case data = "flying":
+                typeImage2.src = 'Types/Flying.png';
+                break;
+            case data = "fighting":
+                typeImage2.src = 'Types/Fighting.png';
+                break;
+            case data = "electric":
+                typeImage2.src = 'Types/Electric.png';
+                break;
+            case data = "bug":
+                typeImage2.src = 'Types/Bug.png';
+                break;
+        }
     }
 </script>
 
