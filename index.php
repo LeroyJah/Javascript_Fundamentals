@@ -306,7 +306,7 @@ echo "<br>";
         }
     }
 
-    function typeSelector1(data){
+    async function typeSelector1(data){
         switch(data){
             case data = "dragon":
                 typeImage1.src = 'Types/Dragon.png';
@@ -355,6 +355,9 @@ echo "<br>";
                 break;
             case data = "electric":
                 typeImage1.src = 'Types/Electric.png';
+            case data = "normal":
+                typeImage2.src = 'Types/Normal.png';
+                break;
                 break;
             case data = "bug":
                 typeImage1.src = 'Types/Bug.png';
@@ -362,7 +365,7 @@ echo "<br>";
         }
     }
 
-    function typeSelector2(data) {
+   async function typeSelector2(data) {
         switch (data) {
             case data = "dragon":
                 typeImage2.src = 'Types/Dragon.png';
@@ -411,6 +414,9 @@ echo "<br>";
                 break;
             case data = "electric":
                 typeImage2.src = 'Types/Electric.png';
+                break;
+            case data = "normal":
+                typeImage2.src = 'Types/Normal.png';
                 break;
             case data = "bug":
                 typeImage2.src = 'Types/Bug.png';
