@@ -355,9 +355,9 @@ echo "<br>";
                 break;
             case data = "electric":
                 typeImage1.src = 'Types/Electric.png';
-            case data = "normal":
-                typeImage2.src = 'Types/Normal.png';
                 break;
+            case data = "normal":
+                typeImage1.src = 'Types/Normal.png';
                 break;
             case data = "bug":
                 typeImage1.src = 'Types/Bug.png';
