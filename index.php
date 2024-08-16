@@ -333,17 +333,27 @@ echo "<br>";
 
         for(let i = 0; i < moves.length; i++){
             for(let j = 0; j < moves[i].version_group_details.length; j++){
-                totalMoves = totalMoves + apiObject.moves[i].version_group_details.length
-                console.log(totalMoves)
+                // totalMoves = totalMoves + apiObject.moves[i].version_group_details.length
+                // console.log(totalMoves)
                 if(apiObject.moves[i].version_group_details[j].version_group.name == "firered-leafgreen"){
                     if(apiObject.moves[i].version_group_details[j].level_learned_at > 0){
-                        // totalMoves = totalMoves + apiObject.moves[i].version_group_details.length
-                        console.log(totalMoves,apiObject.moves[i].version_group_details[j].level_learned_at,moves[i].move.name,apiObject.moves[i].version_group_details[j].version_group.name)
+                        var movesObject = {
+                            level: 0,
+                            move: "",
+                            type: ""
+                        };
+
+                        movesObject.level = apiObject.moves[i].version_group_details[j].level_learned_at
+                        movesObject.move = apiObject.moves[i].move.name
+                        movesArray.push(movesObject)
                     }
                 }
             }
         }
-
+        var sortArray = movesArray.sort((a, b) =>
+            a.level - b.level
+        )
+        console.log(sortArray)
     }
 
     async function typeSelector1(data){
