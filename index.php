@@ -108,12 +108,12 @@ echo "<br>";
 <br>
 <table border="1">
     <tr style="border: 1px solid">
-        <th id="level" colspan="">Level</th>
+        <th id="" colspan="">Level</th>
         <th id="" colspan="">Move</th>
         <th id="moveType" colspan="">Type</th>
     </tr>
     <tr>
-        <td></td>
+        <td id="level"></td>
         <td id="move"></td>
         <td></td>
     </tr>
@@ -135,6 +135,7 @@ echo "<br>";
     var typeImage1 = document.getElementById("typeImage1");
     var typeImage2 = document.getElementById("typeImage2");
     var moveName = document.getElementById("move");
+    var moveLevel = document.getElementById("level");
 
     var objectArray = [];
     var apiObject = {};
@@ -323,7 +324,41 @@ echo "<br>";
     }
 
     async function setMoveList(data) {
-        // var moveName = data.moves[0].move.name
+        var moves = apiObject.moves
+        // var gen = apiObject.moves[i].version_group_details[b].version_group.name
+
+
+        var firered_leafgreen = false
+
+        for(let i = 0; i < moves.length; i++){
+            for(let j = 0; j < moves[i].version_group_details.length; j++){
+                console.log(i,j,moves[i].move.name,apiObject.moves[i].version_group_details[j].version_group.name)
+            }
+        }
+
+
+        // function setGen() {
+        //     if(){
+        //
+        //     }
+        // }
+
+        //
+        // if () {
+        //     for (let i = 0; i < moves.length; i++) {
+        //         for(let b = 0; b < ) {
+        //
+        //         }
+        //         if(firered_leafgreen == true){
+        //             console.log(data.moves[i].move.name)
+        //         }
+        //     }
+        // }
+
+
+
+
+        document.getElementById("level").innerText = data.moves[0].version_group_details[0].level_learned_at
         document.getElementById("move").innerText = data.moves[0].move.name
     }
 
