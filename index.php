@@ -324,42 +324,26 @@ echo "<br>";
     }
 
     async function setMoveList(data) {
+        document.getElementById("level").innerText = data.moves[0].version_group_details[0].level_learned_at
+        document.getElementById("move").innerText = data.moves[0].move.name
+
         var moves = apiObject.moves
-        // var gen = apiObject.moves[i].version_group_details[b].version_group.name
-
-
-        var firered_leafgreen = false
+        var movesArray = [];
+        var totalMoves = 0;
 
         for(let i = 0; i < moves.length; i++){
             for(let j = 0; j < moves[i].version_group_details.length; j++){
-                console.log(i,j,moves[i].move.name,apiObject.moves[i].version_group_details[j].version_group.name)
+                totalMoves = totalMoves + apiObject.moves[i].version_group_details.length
+                console.log(totalMoves)
+                if(apiObject.moves[i].version_group_details[j].version_group.name == "firered-leafgreen"){
+                    if(apiObject.moves[i].version_group_details[j].level_learned_at > 0){
+                        // totalMoves = totalMoves + apiObject.moves[i].version_group_details.length
+                        console.log(totalMoves,apiObject.moves[i].version_group_details[j].level_learned_at,moves[i].move.name,apiObject.moves[i].version_group_details[j].version_group.name)
+                    }
+                }
             }
         }
 
-
-        // function setGen() {
-        //     if(){
-        //
-        //     }
-        // }
-
-        //
-        // if () {
-        //     for (let i = 0; i < moves.length; i++) {
-        //         for(let b = 0; b < ) {
-        //
-        //         }
-        //         if(firered_leafgreen == true){
-        //             console.log(data.moves[i].move.name)
-        //         }
-        //     }
-        // }
-
-
-
-
-        document.getElementById("level").innerText = data.moves[0].version_group_details[0].level_learned_at
-        document.getElementById("move").innerText = data.moves[0].move.name
     }
 
     async function typeSelector1(data){
