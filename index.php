@@ -106,6 +106,19 @@ echo "<br>";
     </table>
 </div>
 <br>
+<table border="1">
+    <tr style="border: 1px solid">
+        <th id="level" colspan="">Level</th>
+        <th id="" colspan="">Move</th>
+        <th id="moveType" colspan="">Type</th>
+    </tr>
+    <tr>
+        <td></td>
+        <td id="move"></td>
+        <td></td>
+    </tr>
+</table>
+<br>
 <div style="width: 250px">
     <div id="pokemonType1" style="display: inline-block ;text-align: center; width: 100px; height: 20px; margin: 5px">
         <img id="typeImage1" src="" alt="">
@@ -117,6 +130,12 @@ echo "<br>";
 
 
 <script>
+    var pokemonType1 = document.getElementById("pokemonType1");
+    var pokemonType2 = document.getElementById("pokemonType2");
+    var typeImage1 = document.getElementById("typeImage1");
+    var typeImage2 = document.getElementById("typeImage2");
+    var moveName = document.getElementById("move");
+
     var objectArray = [];
     var apiObject = {};
     var status = false;
@@ -185,13 +204,9 @@ echo "<br>";
         setStats(currentObject);
         setStatBar(currentObject);
         setTypes(currentObject);
+        setMoveList(currentObject);
 
     }
-
-    var pokemonType1 = document.getElementById("pokemonType1");
-    var pokemonType2 = document.getElementById("pokemonType2");
-    var typeImage1 = document.getElementById("typeImage1");
-    var typeImage2 = document.getElementById("typeImage2");
 
     function fetchPokemon(){
         const pokemonName = document.getElementById("pokemonName").value.toLowerCase();
@@ -217,6 +232,7 @@ echo "<br>";
                 setTypes(pokeObject);
                 storeObject(pokeObject);
                 setArrayIndex();
+                setMoveList(pokeObject);
                 status = false;
             })
             .catch(function(error){
@@ -304,6 +320,11 @@ echo "<br>";
         }else{
             pokemonType2.style.display = "none";
         }
+    }
+
+    async function setMoveList(data) {
+        // var moveName = data.moves[0].move.name
+        document.getElementById("move").innerText = data.moves[0].move.name
     }
 
     async function typeSelector1(data){
