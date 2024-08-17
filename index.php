@@ -115,16 +115,13 @@ echo "<br>";
     </div>
 </div>
 <br>
-<table id="movesTable" border="1">
+<table  id="movesTable" border="1">
     <tr style="border: 1px solid">
         <th id="" colspan="">Level</th>
         <th id="" colspan="">Move</th>
         <th id="moveType" colspan="">Type</th>
     </tr>
     <tr>
-        <td id="level"></td>
-        <td id="move"></td>
-        <td></td>
     </tr>
 </table>
 
@@ -351,18 +348,27 @@ echo "<br>";
         )
         console.log(sortArray)
 
-        var moveString = "";
+        var moveLevel = 0;
+        var moveString = "hi";
 
         for(let i = 0; i < movesArray.length; ++i){
-            var singleMove = movesArray[i].move
-            moveString += `<tr><td>${singleMove}<td></tr>`;
+            moveLevel = movesArray[i].level
+            moveString = movesArray[i].move
+
+            moveLevel = `<td>${moveLevel}</td>`;
+
+
+            var createTableRow =
+                document.createElement('tr');
+            var createTableData =
+                document.createElement('td');
+
+            createTableRow.innerHTML = moveLevel
+            createTableData.innerHTML = moveString
+
+            movesTable.appendChild(createTableRow)
+            createTableRow.appendChild(createTableData)
         }
-
-        movesTable.innerHTML = moveString;
-
-        document.getElementById("level").innerText = movesArray[0].level
-        document.getElementById("move").innerText = movesArray[0].move
-
 
     }
 
