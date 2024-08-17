@@ -106,7 +106,16 @@ echo "<br>";
     </table>
 </div>
 <br>
-<table border="1">
+<div style="width: 250px">
+    <div id="pokemonType1" style="display: inline-block ;text-align: center; width: 100px; height: 20px; margin: 5px">
+        <img id="typeImage1" src="" alt="">
+    </div>
+    <div id="pokemonType2" style="display: none ;float: right ;text-align: center; width: 100px; height: 20px; margin: 5px">
+        <img id="typeImage2" src="" alt="">
+    </div>
+</div>
+<br>
+<table id="movesTable" border="1">
     <tr style="border: 1px solid">
         <th id="" colspan="">Level</th>
         <th id="" colspan="">Move</th>
@@ -118,16 +127,6 @@ echo "<br>";
         <td></td>
     </tr>
 </table>
-<br>
-<div style="width: 250px">
-    <div id="pokemonType1" style="display: inline-block ;text-align: center; width: 100px; height: 20px; margin: 5px">
-        <img id="typeImage1" src="" alt="">
-    </div>
-    <div id="pokemonType2" style="display: none ;float: right ;text-align: center; width: 100px; height: 20px; margin: 5px">
-        <img id="typeImage2" src="" alt="">
-    </div>
-</div>
-
 
 <script>
     var pokemonType1 = document.getElementById("pokemonType1");
@@ -136,6 +135,7 @@ echo "<br>";
     var typeImage2 = document.getElementById("typeImage2");
     var moveName = document.getElementById("move");
     var moveLevel = document.getElementById("level");
+    var movesTable = document.getElementById("movesTable");
 
     var objectArray = [];
     var apiObject = {};
@@ -317,26 +317,22 @@ echo "<br>";
             pokemonType2.style.display = "inline-block";
             var type2 = data.types[1].type.name
             typeSelector2(type2);
-            console.log(type2);
         }else{
             pokemonType2.style.display = "none";
         }
     }
 
     async function setMoveList(data) {
-        document.getElementById("level").innerText = data.moves[0].version_group_details[0].level_learned_at
-        document.getElementById("move").innerText = data.moves[0].move.name
-
         var moves = apiObject.moves
         var movesArray = [];
         var totalMoves = 0;
 
-        for(let i = 0; i < moves.length; i++){
-            for(let j = 0; j < moves[i].version_group_details.length; j++){
+        for(let i = 0; i < moves.length; i++){ //loop to go through every move known to said pokemon
+            for(let j = 0; j < moves[i].version_group_details.length; j++){//loop to go through every iteration of said move
                 // totalMoves = totalMoves + apiObject.moves[i].version_group_details.length
                 // console.log(totalMoves)
                 if(apiObject.moves[i].version_group_details[j].version_group.name == "firered-leafgreen"){
-                    if(apiObject.moves[i].version_group_details[j].level_learned_at > 0){
+                    if(apiObject.moves[i].version_group_details[j].level_learned_at > 0){//if-statement for moves learned by level-up only
                         var movesObject = {
                             level: 0,
                             move: "",
@@ -354,6 +350,20 @@ echo "<br>";
             a.level - b.level
         )
         console.log(sortArray)
+
+        var moveString = "";
+
+        for(let i = 0; i < movesArray.length; ++i){
+            var singleMove = movesArray[i].move
+            moveString += `<tr><td>${singleMove}<td></tr>`;
+        }
+
+        movesTable.innerHTML = moveString;
+
+        document.getElementById("level").innerText = movesArray[0].level
+        document.getElementById("move").innerText = movesArray[0].move
+
+
     }
 
     async function typeSelector1(data){
