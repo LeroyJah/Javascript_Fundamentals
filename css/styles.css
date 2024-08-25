@@ -1,0 +1,30 @@
+.wrapper-main {
+
+}
+
+.anim {
+    height: 10px;
+    border-style: solid;
+    border-width: 1px;
+    width: 0px;
+    transition: width 2s;
+}
+.movesList {
+    border: orange;
+    border-style: solid;
+    width: 180px;
+    height: 220px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column-reverse;
+}
+/*.anim:active {*/
+/*    width: 200px;*/
+/*}*/
+/*@keyframes mymove {*/
+/*    from {width: 0px;}*/
+/*    to {width: 200px;}*/
+/*}*/
+/*.anim {*/
+/*    width: 100px*/
+/*}*/

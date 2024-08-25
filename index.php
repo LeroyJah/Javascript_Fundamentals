@@ -1,5 +1,5 @@
 <?php
-echo 'Hello World';
+echo 'PokeScouter';
 echo "<br>";
 ?>
 
@@ -11,26 +11,7 @@ echo "<br>";
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pokedex</title>
-    <style>
-        .anim {
-            height: 10px;
-            border-style: solid;
-            border-width: 1px;
-            width: 0px;
-            transition: width 2s;
-        }
-
-        /*.anim:active {*/
-        /*    width: 200px;*/
-        /*}*/
-        /*@keyframes mymove {*/
-        /*    from {width: 0px;}*/
-        /*    to {width: 200px;}*/
-        /*}*/
-        /*.anim {*/
-        /*    width: 100px*/
-        /*}*/
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
@@ -115,16 +96,15 @@ echo "<br>";
     </div>
 </div>
 <br>
-<table  id="movesTable" border="1">
-    <tr style="border: 1px solid">
-        <th id="" colspan="">Level</th>
-        <th id="" colspan="">Move</th>
-        <th id="moveType" colspan="">Type</th>
-    </tr>
-    <tr>
-    </tr>
-</table>
-
+    <div class="movesList">
+        <table  id="movesTable" border="1">
+            <tr style="border: 1px solid">
+                <th id="" colspan="">Level</th>
+                <th id="" colspan="">Move</th>
+                <th id="moveType" colspan="">Type</th>
+            </tr>
+        </table>
+    </div>
 <script>
     var pokemonType1 = document.getElementById("pokemonType1");
     var pokemonType2 = document.getElementById("pokemonType2");
