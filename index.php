@@ -39,45 +39,43 @@ echo "<br>";
         <tr>
             <td>hp</td>
             <td id="hp"></td>
-            <td>
+            <td class="statbar">
                 <div class="anim" id="hpstat"></div>
             </td>
         </tr>
         <tr>
             <td>attack</td>
             <td id="attack"></td>
-            <td>
-                <div class="anim" id="attackstat" style="height: 10px; width: 0px; border-style: solid; border-width: 1px"></div>
+            <td class="statbar">
+                <div class="anim" id="attackstat"></div>
             </td>
         </tr>
         <tr>
             <td>defense</td>
             <td id="defense"></td>
-            <td>
-                <div class="anim" id="defensestat" style="height: 10px; width: 0px; border-style: solid; border-width: 1px"></div>
+            <td class="statbar">
+                <div class="anim" id="defensestat"></div>
             </td>
         </tr>
         <tr>
             <td>S.attack</td>
             <td id="s.attack"></td>
-            <td>
-                <div class="anim" id="sattackstat" style="height: 10px; width: 0px; border-style: solid; border-width: 1px"></div>
+            <td class="statbar">
+                <div class="anim" id="sattackstat"></div>
             </td>
         </tr>
         <tr>
             <td>S.defense</td>
             <td id="s.defense"></td>
-                <td class="statbar"style="border-style: solid; border-width: 1px">
-                    <div >
-                        <div class="anim" id="sdefensestat" style="height: 10px; width: 0px; border-style: solid; border-width: 1px"></div>
-                    </div>
+                <td>
+                        <div class="anim" id="sdefensestat"></div>
                 </td>
         </tr>
         <tr>
             <td>speed</td>
             <td id="speed"></td>
-            <td>
-                <div class="anim" id="speedstat" style="height: 10px; width: 0px; border-style: solid; border-width: 1px"></div>
+            <td class="statbar">
+                <div class="anim" id="speedstat"></div>
             </td>
         </tr>
         <tr>
@@ -129,6 +127,8 @@ echo "<br>";
             fetchPokemon()
         }
     })
+
+
 
     function displayArrayIndex(){
         console.log(currentArrayIndex)
@@ -273,19 +273,38 @@ echo "<br>";
   async function setStatBar(data){
       const object = await data;
       const stats = object.stats;
+      var x = window.matchMedia("(max-width: 600px)")
 
-        var hp = document.getElementById("hpstat");
-        hp.style.width = stats[0].base_stat * 2
-        var attack = document.getElementById("attackstat");
-        attack.style.width = stats[1].base_stat * 2
-        var defense = document.getElementById("defensestat");
-        defense.style.width = stats[2].base_stat * 2
-        var sattack = document.getElementById("sattackstat");
-        sattack.style.width = stats[3].base_stat * 2
-        var sdefense = document.getElementById("sdefensestat");
-        sdefense.style.width = stats[4].base_stat * 2
-        var speed = document.getElementById("speedstat");
-        speed.style.width = stats[5].base_stat * 2
+      async function checkWidth(matchMedia){
+          if(matchMedia.matches){
+              var hp = document.getElementById("hpstat");
+              hp.style.width = stats[0].base_stat * 1
+              var attack = document.getElementById("attackstat");
+              attack.style.width = stats[1].base_stat * 1
+              var defense = document.getElementById("defensestat");
+              defense.style.width = stats[2].base_stat * 1
+              var sattack = document.getElementById("sattackstat");
+              sattack.style.width = stats[3].base_stat * 1
+              var sdefense = document.getElementById("sdefensestat");
+              sdefense.style.width = stats[4].base_stat * 1
+              var speed = document.getElementById("speedstat");
+              speed.style.width = stats[5].base_stat * 1
+          }else{
+              var hp = document.getElementById("hpstat");
+              hp.style.width = stats[0].base_stat * 2
+              var attack = document.getElementById("attackstat");
+              attack.style.width = stats[1].base_stat * 2
+              var defense = document.getElementById("defensestat");
+              defense.style.width = stats[2].base_stat * 2
+              var sattack = document.getElementById("sattackstat");
+              sattack.style.width = stats[3].base_stat * 2
+              var sdefense = document.getElementById("sdefensestat");
+              sdefense.style.width = stats[4].base_stat * 2
+              var speed = document.getElementById("speedstat");
+              speed.style.width = stats[5].base_stat * 2
+          }
+      }
+      checkWidth(x);
     }
 
     async function setTypes(data) {
