@@ -8,6 +8,7 @@
     border-width: 1px;
     width: 0px;
     transition: width 2s;
+    overflow: scroll;
 }
 .movesList {
     border: orange;
@@ -17,6 +18,15 @@
     overflow: auto;
     display: flex;
     flex-direction: column-reverse;
+}
+.statbar{
+    width:400px;
+}
+
+@media only screen and (max-width: 600px){
+    .statbar{
+        width: 50%;
+    }
 }
 /*.anim:active {*/
 /*    width: 200px;*/

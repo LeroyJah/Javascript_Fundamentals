@@ -8,7 +8,7 @@ echo "<br>";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pokedex</title>
     <link rel="stylesheet" href="css/styles.css">
@@ -67,9 +67,11 @@ echo "<br>";
         <tr>
             <td>S.defense</td>
             <td id="s.defense"></td>
-            <td>
-                <div class="anim" id="sdefensestat" style="height: 10px; width: 0px; border-style: solid; border-width: 1px"></div>
-            </td>
+                <td class="statbar"style="border-style: solid; border-width: 1px">
+                    <div >
+                        <div class="anim" id="sdefensestat" style="height: 10px; width: 0px; border-style: solid; border-width: 1px"></div>
+                    </div>
+                </td>
         </tr>
         <tr>
             <td>speed</td>
