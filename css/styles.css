@@ -12,14 +12,14 @@
 }
 .movesList {
     width: 180px;
-    height: 220px;
+    height:380px;
     overflow: auto;
     display: flex;
     flex-direction: column-reverse;
 }
 .statbar{
     display:flex;
-    width:400px;
+    width:500px;
     transition: width 2s;
 }
 
@@ -28,13 +28,9 @@
         width: 260px;
     }
 }
-/*.anim:active {*/
-/*    width: 200px;*/
-/*}*/
-/*@keyframes mymove {*/
-/*    from {width: 0px;}*/
-/*    to {width: 200px;}*/
-/*}*/
-/*.anim {*/
-/*    width: 100px*/
-/*}*/
+
+@media only screen and (max-height: 700px){
+    .movesList{
+        height: 240px;
+    }
+}

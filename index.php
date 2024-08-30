@@ -19,7 +19,7 @@ echo "<br>";
 <button onclick="fetchPokemon();"> fetch Pokemon</button>
 <button onclick="prevObject(objectArray);"> Prev Pokemon</button>
 <button onclick="nextObject(objectArray);"> Next Pokemon</button>
-<button onclick="addBug()"> Add Bug</button>
+<!--<button onclick="scrollDown()"> Scroll Down</button>-->
 
 <br>
 <div>
@@ -67,7 +67,7 @@ echo "<br>";
         <tr>
             <td>S.defense</td>
             <td id="s.defense"></td>
-                <td>
+                <td class="statbar">
                         <div class="anim" id="sdefensestat"></div>
                 </td>
         </tr>
@@ -86,7 +86,7 @@ echo "<br>";
         </tr>
     </table>
 </div>
-<br>
+
 <div style="width: 250px">
     <div id="pokemonType1" style="display: inline-block ;text-align: center; width: 100px; height: 20px; margin: 5px">
         <img id="typeImage1" src="" alt="">
@@ -113,6 +113,7 @@ echo "<br>";
     var moveName = document.getElementById("move");
     var moveLevel = document.getElementById("level");
     var movesTable = document.getElementById("movesTable");
+    var movesList = document.getElementsByClassName("movesList");
 
     var objectArray = [];
     var apiObject = {};
@@ -127,6 +128,8 @@ echo "<br>";
             fetchPokemon()
         }
     })
+
+    
 
 
 
@@ -205,7 +208,6 @@ echo "<br>";
 
                 status = true;
 
-
                 setSprite(pokeObject)
                 setStats(pokeObject);
                 setStatBar(pokeObject);
@@ -213,6 +215,8 @@ echo "<br>";
                 storeObject(pokeObject);
                 setArrayIndex();
                 setMoveList(pokeObject);
+                movesTable.scrollTo(500,0)
+
                 status = false;
             })
             .catch(function(error){
@@ -278,30 +282,30 @@ echo "<br>";
       async function checkWidth(matchMedia){
           if(matchMedia.matches){
               var hp = document.getElementById("hpstat");
-              hp.style.width = stats[0].base_stat * 1
+              hp.style.width = stats[0].base_stat * 1.5
               var attack = document.getElementById("attackstat");
-              attack.style.width = stats[1].base_stat * 1
+              attack.style.width = stats[1].base_stat * 1.5
               var defense = document.getElementById("defensestat");
-              defense.style.width = stats[2].base_stat * 1
+              defense.style.width = stats[2].base_stat * 1.5
               var sattack = document.getElementById("sattackstat");
-              sattack.style.width = stats[3].base_stat * 1
+              sattack.style.width = stats[3].base_stat * 1.5
               var sdefense = document.getElementById("sdefensestat");
-              sdefense.style.width = stats[4].base_stat * 1
+              sdefense.style.width = stats[4].base_stat * 1.5
               var speed = document.getElementById("speedstat");
-              speed.style.width = stats[5].base_stat * 1
+              speed.style.width = stats[5].base_stat * 1.5
           }else{
               var hp = document.getElementById("hpstat");
-              hp.style.width = stats[0].base_stat * 2
+              hp.style.width = stats[0].base_stat * 2.5
               var attack = document.getElementById("attackstat");
-              attack.style.width = stats[1].base_stat * 2
+              attack.style.width = stats[1].base_stat * 2.5
               var defense = document.getElementById("defensestat");
-              defense.style.width = stats[2].base_stat * 2
+              defense.style.width = stats[2].base_stat * 2.5
               var sattack = document.getElementById("sattackstat");
-              sattack.style.width = stats[3].base_stat * 2
+              sattack.style.width = stats[3].base_stat * 2.5
               var sdefense = document.getElementById("sdefensestat");
-              sdefense.style.width = stats[4].base_stat * 2
+              sdefense.style.width = stats[4].base_stat * 2.5
               var speed = document.getElementById("speedstat");
-              speed.style.width = stats[5].base_stat * 2
+              speed.style.width = stats[5].base_stat * 2.5
           }
       }
       checkWidth(x);
@@ -370,7 +374,10 @@ echo "<br>";
             movesTable.appendChild(createTableRow)
             createTableRow.appendChild(createTableData)
         }
+    }
 
+    function scrollDown(){
+                movesTable.scrollTop = movesTable.scrollHeight
     }
 
     async function typeSelector1(data){
@@ -490,11 +497,11 @@ echo "<br>";
                 break;
         }
     }
-
-    function addBug(){
-        pokemonType2.style.display = "inline-block";
-        typeImage2.src = 'Types/Bug.png';
-    }
+    //
+    // function addBug(){
+    //     pokemonType2.style.display = "inline-block";
+    //     typeImage2.src = 'Types/Bug.png';
+    // }
 </script>
 
 </body>
