@@ -1,8 +1,8 @@
-import {setTypes} from "./setPokemonType.js";
-import {setStats} from "./setStatNumbers.js";
-import {setSprite} from "./setPokemonSprite.js";
-import {clearInput} from "./clearInputField.js";
-import {setMoveList} from "./createMovesList.js";
+    import {setTypes} from "./setPokemonType.js";
+    import {setStats} from "./setStatNumbers.js";
+    import {setSprite} from "./setPokemonSprite.js";
+    import {clearInput} from "./clearInputField.js";
+    import {setMoveList} from "./createMovesList.js";
 
     var pokemonType1 = document.getElementById("pokemonType1");
     var pokemonType2 = document.getElementById("pokemonType2");
@@ -15,25 +15,29 @@ import {setMoveList} from "./createMovesList.js";
     var inputField = document.getElementById("pokemonName")
 
     var objectArray = [];
-    var apiObject = {};
     var status = false;
     var arrayIndex = objectArray.length;
     var currentArrayIndex = 0;
 
-
-
     inputField.addEventListener('keypress', function(e){
-    if (e.key === 'Enter'){
-    fetchPokemon()
-}
-})
+        if (e.key === 'Enter'){
+            fetchPokemon()
+        }
+    })
+
     const fetchPokemonButton = document.getElementById("fetchPokemon")
 
-    fetchPokemonButton.addEventListener('click',fetchPokemon);
+    fetchPokemonButton.addEventListener('click',function (e){
+        if (inputField.value !== ""){
+            fetchPokemon()
+        }
+    });
 
     const prevPokemonButton = document.getElementById("prevPokemon")
 
-    // prevPokemonButton.addEventListener('click',prevObject());
+    // prevPokemonButton.addEventListener('click', function (e){
+    //     prevObject(objectArray[currentArrayIndex])
+    // });
 
     async function setArrayIndex(){
     let thisArrayIndex = await objectArray.length;
@@ -52,7 +56,7 @@ import {setMoveList} from "./createMovesList.js";
 }
 }
 
-    async function prevObject(object){
+    function prevObject(object){
     prevIndex()
         .then(() => {
             updateObject(object);
@@ -78,37 +82,37 @@ import {setMoveList} from "./createMovesList.js";
 }
 
     function updateObject(object) {
-    var currentObject = object[currentArrayIndex];
+    let currentObject = object[currentArrayIndex];
     setSprite(currentObject);
     setStats(currentObject);
-    setStatBar(currentObject);
+    setStatBars(currentObject);
     setTypes(currentObject);
     setMoveList(currentObject);
-
 }
 
     function fetchPokemon(){
     const pokemonName = document.getElementById("pokemonName").value.toLowerCase();
+    //i should add a rule so that empty space around the string gets removed
 
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
 
-    .then(function(pokeObject){
-    // console.log(pokeObject);
-    clearInput(pokeObject);
-    return pokeObject;
+    .then(function(responseObject){
+    clearInput(responseObject);
+    return responseObject;
 })
-    .then(pokeObject => pokeObject.json())
+    .then(responseObject => responseObject.json())
     .then(function(pokeObject) {
-
-    apiObject = pokeObject;
 
     status = true;
 
     setSprite(pokeObject)
     setStats(pokeObject);
-    setStatBar(pokeObject);
+    setStatBars(pokeObject);
     setTypes(pokeObject);
-    storeObject(pokeObject);
+        if(status) {
+            objectArray.push(pokeObject);
+            console.log(objectArray)
+        }
     setArrayIndex();
     setMoveList(pokeObject);
     movesTable.scrollTo(500,0)
@@ -118,22 +122,10 @@ import {setMoveList} from "./createMovesList.js";
     .catch(function(error){
     console.error(error)
     status = false;
-    // console.log(status)
 });
 }
 
-    function storeObject(data){
-    if(status) {
-    // console.log(status);
-    objectArray.push(data);
-    console.log(objectArray);
-}
-    // status = false;
-    // else{
-    //     console.log(status)
-    // }
-}
-    async function setStatBar(data){
+    async function setStatBars(data){
     const object = await data;
     const stats = object.stats;
     var x = window.matchMedia("(max-width: 600px)")

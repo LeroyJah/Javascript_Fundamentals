@@ -1,4 +1,4 @@
-export async function setTypes(data) {
+export function setTypes(data) {
     var type1 = data.types[0].type.name
     typeSelector1(type1);
 
@@ -11,7 +11,7 @@ export async function setTypes(data) {
     }
 }
 
-async function typeSelector1(data){
+function typeSelector1(data){
     switch(data){
         case data = "dragon":
             typeImage1.src = 'Types/Dragon.png';
@@ -70,7 +70,7 @@ async function typeSelector1(data){
     }
 }
 
-async function typeSelector2(data) {
+function typeSelector2(data) {
     switch (data) {
         case data = "dragon":
             typeImage2.src = 'Types/Dragon.png';

@@ -25,7 +25,6 @@ export async function setMoveList(data) {
     var sortArray = movesArray.sort((a, b) =>
         a.level - b.level
     )
-    console.log(sortArray)
 
     var moveLevel = 0;
     var moveString = "hi";
