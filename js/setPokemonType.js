@@ -1,4 +1,17 @@
-export async function typeSelector1(data){
+export async function setTypes(data) {
+    var type1 = data.types[0].type.name
+    typeSelector1(type1);
+
+    if(data.types[1]) {
+        pokemonType2.style.display = "inline-block";
+        var type2 = data.types[1].type.name
+        typeSelector2(type2);
+    }else{
+        pokemonType2.style.display = "none";
+    }
+}
+
+async function typeSelector1(data){
     switch(data){
         case data = "dragon":
             typeImage1.src = 'Types/Dragon.png';
@@ -57,7 +70,7 @@ export async function typeSelector1(data){
     }
 }
 
-export async function typeSelector2(data) {
+async function typeSelector2(data) {
     switch (data) {
         case data = "dragon":
             typeImage2.src = 'Types/Dragon.png';
