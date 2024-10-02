@@ -1,9 +1,12 @@
+    //Modules import
     import {setTypes} from "./setPokemonType.js";
     import {setStats} from "./setStatNumbers.js";
     import {setSprite} from "./setPokemonSprite.js";
     import {clearInput} from "./clearInputField.js";
     import {setMoveList} from "./createMovesList.js";
+    import {currentArrayIndex,objectArray,setArrayIndex} from "./pokemonSelector.js";
 
+    //DOM elements
     var pokemonType1 = document.getElementById("pokemonType1");
     var pokemonType2 = document.getElementById("pokemonType2");
     var typeImage1 = document.getElementById("typeImage1");
@@ -13,19 +16,20 @@
     var movesTable = document.getElementById("movesTable");
     var movesList = document.getElementsByClassName("movesList");
     var inputField = document.getElementById("pokemonName")
+    const fetchPokemonButton = document.getElementById("fetchPokemon")
+    const prevPokemonButton = document.getElementById("prevPokemon")
 
-    var objectArray = [];
+    //variables
     var status = false;
-    var arrayIndex = objectArray.length;
-    var currentArrayIndex = 0;
+    var objectArrayLength = objectArray.length;
+    // let apiObject = await getCurrentObject();
 
+    //Event Listeners
     inputField.addEventListener('keypress', function(e){
         if (e.key === 'Enter'){
             fetchPokemon()
         }
     })
-
-    const fetchPokemonButton = document.getElementById("fetchPokemon")
 
     fetchPokemonButton.addEventListener('click',function (e){
         if (inputField.value !== ""){
@@ -33,65 +37,21 @@
         }
     });
 
-    const prevPokemonButton = document.getElementById("prevPokemon")
-
-    // prevPokemonButton.addEventListener('click', function (e){
-    //     prevObject(objectArray[currentArrayIndex])
-    // });
-
-    async function setArrayIndex(){
-    let thisArrayIndex = await objectArray.length;
-    currentArrayIndex = thisArrayIndex - 1;
-
-    return currentArrayIndex;
-}
-
-    async function prevIndex(){
-    if(currentArrayIndex > 0) {
-    currentArrayIndex = await currentArrayIndex - 1;
-
-    var currentObject = await objectArray[currentArrayIndex];
-
-    return currentArrayIndex;
-}
-}
-
-    function prevObject(object){
-    prevIndex()
-        .then(() => {
-            updateObject(object);
-        })
-}
-
-    async function nextIndex(){
-    var totalLength = await (objectArray.length) - 1;
-    if(currentArrayIndex < totalLength) {
-    currentArrayIndex = await currentArrayIndex + 1;
-
-    // console.log(currentArrayIndex)
-    return currentArrayIndex;
-}
-}
-
-
-    async function nextObject(object){
-    nextIndex()
-        .then(() => {
-            updateObject(object);
-        })
-}
+    prevPokemonButton.addEventListener('click', function (e){
+        if(currentArrayIndex > 0)
+        {getCurrentObject().then(response => prevObject(response))}
+    });
 
     function updateObject(object) {
-    let currentObject = object[currentArrayIndex];
-    setSprite(currentObject);
-    setStats(currentObject);
-    setStatBars(currentObject);
-    setTypes(currentObject);
-    setMoveList(currentObject);
+    setSprite(object);
+    setStats(object);
+    setStatBars(object);
+    setTypes(object);
+    setMoveList(object);
 }
 
     function fetchPokemon(){
-    const pokemonName = document.getElementById("pokemonName").value.toLowerCase();
+    let pokemonName = document.getElementById("pokemonName").value.toLowerCase();
     //i should add a rule so that empty space around the string gets removed
 
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
@@ -161,8 +121,6 @@
 }
     checkWidth(x);
 }
-
-
 
     function scrollDown(){
     movesTable.scrollTop = movesTable.scrollHeight
