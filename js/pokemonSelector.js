@@ -3,7 +3,7 @@ import {setSprite} from "./setPokemonSprite.js";
 import {setStats} from "./setStatNumbers.js";
 import {setTypes} from "./setPokemonType.js";
 import {setMoveList} from "./createMovesList.js";
-import {setStatBars} from "./main.js";
+import {setStatBars} from "./setStatNumbers.js";
 
 
 export let objectArray = [];
@@ -16,10 +16,6 @@ export function setArrayIndex(){
 
     return currentArrayIndex;
 }
-function setNewObject(){
-    currentObject = objectArray[currentArrayIndex];
-}
-
 export function prevObject(){
     if(currentArrayIndex > 0) {
         currentArrayIndex = currentArrayIndex - 1;
@@ -40,7 +36,9 @@ export function nextObject(){
         return currentArrayIndex;
     }
 }
-
+function setNewObject(){
+    currentObject = objectArray[currentArrayIndex];
+}
 function updateObject(object) {
     setSprite(object);
     setStats(object);
