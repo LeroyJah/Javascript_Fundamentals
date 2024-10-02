@@ -4,7 +4,7 @@
     import {setSprite} from "./setPokemonSprite.js";
     import {clearInput} from "./clearInputField.js";
     import {setMoveList} from "./createMovesList.js";
-    import {currentArrayIndex,objectArray,setArrayIndex} from "./pokemonSelector.js";
+    import {currentArrayIndex, objectArray, prevObject,nextObject, setArrayIndex} from "./pokemonSelector.js";
 
     //DOM elements
     var pokemonType1 = document.getElementById("pokemonType1");
@@ -18,11 +18,10 @@
     var inputField = document.getElementById("pokemonName")
     const fetchPokemonButton = document.getElementById("fetchPokemon")
     const prevPokemonButton = document.getElementById("prevPokemon")
+    const nextPokemonButton = document.getElementById("nextPokemon")
 
     //variables
     var status = false;
-    var objectArrayLength = objectArray.length;
-    // let apiObject = await getCurrentObject();
 
     //Event Listeners
     inputField.addEventListener('keypress', function(e){
@@ -30,25 +29,17 @@
             fetchPokemon()
         }
     })
-
     fetchPokemonButton.addEventListener('click',function (e){
         if (inputField.value !== ""){
             fetchPokemon()
         }
     });
-
     prevPokemonButton.addEventListener('click', function (e){
-        if(currentArrayIndex > 0)
-        {getCurrentObject().then(response => prevObject(response))}
+        prevObject()
     });
-
-    function updateObject(object) {
-    setSprite(object);
-    setStats(object);
-    setStatBars(object);
-    setTypes(object);
-    setMoveList(object);
-}
+    nextPokemonButton.addEventListener('click', function (e){
+        nextObject()
+    });
 
     function fetchPokemon(){
     let pokemonName = document.getElementById("pokemonName").value.toLowerCase();
@@ -85,7 +76,7 @@
 });
 }
 
-    async function setStatBars(data){
+    export async function setStatBars(data){
     const object = await data;
     const stats = object.stats;
     var x = window.matchMedia("(max-width: 600px)")

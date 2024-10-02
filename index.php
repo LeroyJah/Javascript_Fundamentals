@@ -17,7 +17,7 @@ echo "PokeScouter";
 <input type="text" id="pokemonName" placeholder="Enter Pokemon name">
 <button id="fetchPokemon"> fetch Pokemon</button>
 <button id="prevPokemon"> Prev Pokemon</button>
-<button onclick="nextObject(objectArray);"> Next Pokemon</button>
+<button id="nextPokemon"> Next Pokemon</button>
 <!--<button onclick="scrollDown()"> Scroll Down</button>-->
 
 <br>
