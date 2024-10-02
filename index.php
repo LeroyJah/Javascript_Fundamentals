@@ -97,11 +97,16 @@ echo "PokeScouter";
 <br>
     <div class="movesList">
         <table  id="movesTable" border="1">
-            <tr style="border: 1px solid">
-                <th id="" colspan="">Level</th>
-                <th id="" colspan="">Move</th>
-                <th id="moveType" colspan="">Type</th>
-            </tr>
+            <thead>
+                <tr style="border: 1px solid">
+                    <th id="" colspan="">Level</th>
+                    <th id="" colspan="">Move</th>
+                    <th id="moveType" colspan="">Type</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
         </table>
     </div>
 <script type="module" src="js/main.js"></script>

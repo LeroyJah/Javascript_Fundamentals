@@ -2,7 +2,7 @@
 import {setSprite} from "./setPokemonSprite.js";
 import {setStats} from "./setStatNumbers.js";
 import {setTypes} from "./setPokemonType.js";
-import {setMoveList} from "./createMovesList.js";
+import {createMovesArray} from "./createMovesList.js";
 import {setStatBars} from "./setStatNumbers.js";
 
 
@@ -44,5 +44,5 @@ function updateObject(object) {
     setStats(object);
     setStatBars(object);
     setTypes(object);
-    setMoveList(object);
+    createMovesArray(object);
 }

@@ -3,7 +3,7 @@ import {setSprite} from "./setPokemonSprite.js";
 import {setStatBars, setStats} from "./setStatNumbers.js";
 import {setTypes} from "./setPokemonType.js";
 import {objectArray, setArrayIndex} from "./pokemonSelector.js";
-import {setMoveList} from "./createMovesList.js";
+import {createMovesArray} from "./createMovesList.js";
 
 let status = false;
 export function fetchPokemon(){
@@ -30,7 +30,7 @@ export function fetchPokemon(){
                 console.log(objectArray)
             }
             setArrayIndex();
-            setMoveList(pokeObject);
+            createMovesArray(pokeObject);
             movesTable.scrollTo(500,0)
 
             status = false;
