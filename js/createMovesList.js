@@ -1,3 +1,5 @@
+import {moveTypeSelector} from "./setPokemonType.js";
+
 const tbody = document.getElementById('tbody')
 
 export function createMovesArray(data) {
@@ -54,10 +56,13 @@ function setMovesTable(movesArray){
             document.createElement('td');
         var createTableData2 =
             document.createElement('td');
+        var createTableImage =
+            document.createElement('img');
 
         createTableRow.innerHTML = moveLevel
         createTableData.innerHTML = moveString
-        createTableData2.innerHTML = moveType
+        createTableImage.src = moveTypeSelector(moveType)
+        createTableData2.appendChild(createTableImage)
 
         tbody.appendChild(createTableRow)
         createTableRow.appendChild(createTableData)

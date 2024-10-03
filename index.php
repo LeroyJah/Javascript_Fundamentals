@@ -12,7 +12,7 @@ echo "PokeScouter";
     <title>Pokedex</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="body">
 
 <input type="text" id="pokemonName" placeholder="Enter Pokemon name">
 <button id="fetchPokemon"> fetch Pokemon</button>
@@ -31,7 +31,7 @@ echo "PokeScouter";
             <a href="https://pokemonshowdown.com" target="_blank">Find me on Showdown @GlaiveVG</a>
         </div>
     </div>
-    <table>
+    <table class="statbarTable">
         <tr>
             <th id="name" colspan="2"></th>
         </tr>
@@ -86,7 +86,7 @@ echo "PokeScouter";
     </table>
 </div>
 
-<div style="width: 250px">
+<div style="width: 250px; padding: 10px">
     <div id="pokemonType1" style="display: inline-block ;text-align: center; width: 100px; height: 20px; margin: 5px">
         <img id="typeImage1" src="" alt="">
     </div>
@@ -94,9 +94,8 @@ echo "PokeScouter";
         <img id="typeImage2" src="" alt="">
     </div>
 </div>
-<br>
     <div class="movesList">
-        <table  id="movesTable" border="1">
+        <table  class="movesTable" id="movesTable" border="1">
             <thead>
                 <tr style="border: 1px solid">
                     <th id="" colspan="">Level</th>

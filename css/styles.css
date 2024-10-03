@@ -1,6 +1,9 @@
 .wrapper-main {
 
 }
+.body {
+    background-color:#F5F5F5;
+}
 
 .anim {
     height: 10px;
@@ -14,6 +17,16 @@
     width: 240px;
     height:380px;
     overflow: auto;
+}
+.statbarTable{
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 4px 4px 5px lightgrey;
+}
+.movesTable {
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 3px 3px 5px lightgrey;
 }
 
 .moveTableHead {
