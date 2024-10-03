@@ -24,7 +24,6 @@
     })
     fetchPokemonButton.addEventListener('click',function (e){
         if (inputField.value !== ""){
-
             fetchPokemon()
         }
     });

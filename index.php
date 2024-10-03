@@ -100,7 +100,7 @@ echo "PokeScouter";
             <thead>
                 <tr style="border: 1px solid">
                     <th id="" colspan="">Level</th>
-                    <th id="" colspan="">Move</th>
+                    <th class="moveTableHead" colspan="">Move</th>
                     <th id="moveType" colspan="">Type</th>
                 </tr>
             </thead>

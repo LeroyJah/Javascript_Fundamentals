@@ -11,10 +11,15 @@
     overflow: visible;
 }
 .movesList {
-    width: 180px;
+    width: 240px;
     height:380px;
     overflow: auto;
 }
+
+.moveTableHead {
+    width: 95px;
+}
+
 .statbar{
     display:flex;
     width:500px;
