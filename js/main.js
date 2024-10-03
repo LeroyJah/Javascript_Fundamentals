@@ -1,7 +1,6 @@
     //Modules import
     import {prevObject,nextObject} from "./pokemonSelector.js";
     import {fetchPokemon} from "./fetchPokemon.js";
-    import {clearMovesList} from "./createMovesList.js";
 
     //DOM elements
     var pokemonType1 = document.getElementById("pokemonType1");
@@ -20,21 +19,18 @@
     //Event Listeners
     inputField.addEventListener('keypress', function(e){
         if (e.key === 'Enter'){
-
             fetchPokemon()
         }
     })
     fetchPokemonButton.addEventListener('click',function (e){
         if (inputField.value !== ""){
-            clearMovesList()
+
             fetchPokemon()
         }
     });
     prevPokemonButton.addEventListener('click', function (e){
-        clearMovesList()
         prevObject()
     });
     nextPokemonButton.addEventListener('click', function (e){
-        clearMovesList()
         nextObject()
     });

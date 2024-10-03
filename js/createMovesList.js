@@ -24,7 +24,9 @@ export function createMovesArray(data) {
     var sortArray = movesArray.sort((a, b) =>
         a.level - b.level
     )
+    clearMovesList()
     setMovesTable(movesArray)
+
     }
 
 
@@ -51,7 +53,9 @@ function setMovesTable(movesArray){
     }
 }
 
-export function clearMovesList(){
-    tbody.remove()
+function clearMovesList(){
+    while (tbody.hasChildNodes()) {
+        tbody.removeChild(tbody.firstChild);
+    }
 }
 
