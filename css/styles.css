@@ -1,10 +1,6 @@
-.wrapper-main {
-
-}
 .body {
     background-color:#F5F5F5;
 }
-
 .anim {
     height: 10px;
     border-style: solid;
@@ -28,7 +24,6 @@
     background-color: white;
     box-shadow: 3px 3px 5px lightgrey;
 }
-
 .moveTableHead {
     width: 95px;
 }
@@ -38,13 +33,11 @@
     width:500px;
     transition: width 2s;
 }
-
 @media only screen and (max-width: 600px){
     .statbar{
         width: 260px;
     }
 }
-
 @media only screen and (max-height: 700px){
     .movesList{
         height: 240px;

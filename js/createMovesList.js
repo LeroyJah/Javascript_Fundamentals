@@ -36,8 +36,6 @@ export function createMovesArray(data) {
     }
 
     }
-
-
 function setMovesTable(movesArray){
     var moveLevel = 0;
     var moveString = "";
@@ -74,8 +72,4 @@ function clearMovesList(){
     while (tbody.hasChildNodes()) {
         tbody.removeChild(tbody.firstChild);
     }
-}
-
-function assignType(){
-
 }

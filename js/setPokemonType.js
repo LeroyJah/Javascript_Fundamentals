@@ -1,171 +1,63 @@
 export function setTypes(data) {
     var type1 = data.types[0].type.name
-    typeSelector1(type1);
+    typeImage1.src = typeSelector(type1);
 
     if(data.types[1]) {
         pokemonType2.style.display = "inline-block";
         var type2 = data.types[1].type.name
-        typeSelector2(type2);
+        typeImage2.src = typeSelector(type2)
     }else{
         pokemonType2.style.display = "none";
     }
 }
 
-function typeSelector1(data){
-    switch(data){
-        case data = "dragon":
-            typeImage1.src = './IMG/pokemonTypes/Dragon.png';
-            break;
-        case data = "fire":
-            typeImage1.src = './IMG/pokemonTypes/Fire.png';
-            break;
-        case data = "water":
-            typeImage1.src = './IMG/pokemonTypes/Water.png';
-            break;
-        case data = "ground":
-            typeImage1.src = './IMG/pokemonTypes/Ground.png';
-            break;
-        case data = "rock":
-            typeImage1.src = './IMG/pokemonTypes/Rock.png';
-            break;
-        case data = "dark":
-            typeImage1.src = './IMG/pokemonTypes/Dark.png';
-            break;
-        case data = "fairy":
-            typeImage1.src = './IMG/pokemonTypes/Fairy.png';
-            break;
-        case data = "ice":
-            typeImage1.src = './IMG/pokemonTypes/Ice.png';
-            break;
-        case data = "grass":
-            typeImage1.src = './IMG/pokemonTypes/Grass.png';
-            break;
-        case data = "steel":
-            typeImage1.src = './IMG/pokemonTypes/Steel.png';
-            break;
-        case data = "psychic":
-            typeImage1.src = './IMG/pokemonTypes/Psychic.png';
-            break;
-        case data = "poison":
-            typeImage1.src = './IMG/pokemonTypes/Poison.png';
-            break;
-        case data = "ghost":
-            typeImage1.src = './IMG/pokemonTypes/Ghost.png';
-            break;
-        case data = "flying":
-            typeImage1.src = './IMG/pokemonTypes/Flying.png';
-            break;
-        case data = "fighting":
-            typeImage1.src = './IMG/pokemonTypes/Fighting.png';
-            break;
-        case data = "electric":
-            typeImage1.src = './IMG/pokemonTypes/Electric.png';
-            break;
-        case data = "normal":
-            typeImage1.src = './IMG/pokemonTypes/Normal.png';
-            break;
-        case data = "bug":
-            typeImage1.src = './IMG/pokemonTypes/Bug.png';
-            break;
+function typeSelector(data) {
+    const Type = {
+        dragon: './IMG/pokemonTypes/Dragon.png',
+        fire: './IMG/pokemonTypes/Fire.png',
+        water: './IMG/pokemonTypes/Water.png',
+        ground: './IMG/pokemonTypes/Ground.png',
+        rock: './IMG/pokemonTypes/Rock.png',
+        dark: './IMG/pokemonTypes/Dark.png',
+        fairy: './IMG/pokemonTypes/Fairy.png',
+        ice: './IMG/pokemonTypes/Ice.png',
+        grass: './IMG/pokemonTypes/Grass.png',
+        steel: './IMG/pokemonTypes/Steel.png',
+        psychic: './IMG/pokemonTypes/Psychic.png',
+        poison: './IMG/pokemonTypes/Poison.png',
+        ghost: './IMG/pokemonTypes/Ghost.png',
+        flying: './IMG/pokemonTypes/Flying.png',
+        fighting: './IMG/pokemonTypes/Fighting.png',
+        electric: './IMG/pokemonTypes/Electric.png',
+        normal: './IMG/pokemonTypes/Normal.png',
+        bug: './IMG/pokemonTypes/Bug.png'
     }
-}
 
-function typeSelector2(data) {
-    switch (data) {
-        case data = "dragon":
-            typeImage2.src = './IMG/pokemonTypes/Dragon.png';
-            break;
-        case data = "fire":
-            typeImage2.src = './IMG/pokemonTypes/Fire.png';
-            break;
-        case data = "water":
-            typeImage2.src = './IMG/pokemonTypes/Water.png';
-            break;
-        case data = "ground":
-            typeImage2.src = './IMG/pokemonTypes/Ground.png';
-            break;
-        case data = "rock":
-            typeImage2.src = './IMG/pokemonTypes/Rock.png';
-            break;
-        case data = "dark":
-            typeImage2.src = './IMG/pokemonTypes/Dark.png';
-            break;
-        case data = "fairy":
-            typeImage2.src = './IMG/pokemonTypes/Fairy.png';
-            break;
-        case data = "ice":
-            typeImage2.src = './IMG/pokemonTypes/Ice.png';
-            break;
-        case data = "grass":
-            typeImage2.src = './IMG/pokemonTypes/Grass.png';
-            break;
-        case data = "steel":
-            typeImage2.src = './IMG/pokemonTypes/Steel.png';
-            break;
-        case data = "psychic":
-            typeImage2.src = './IMG/pokemonTypes/Psychic.png';
-            break;
-        case data = "poison":
-            typeImage2.src = './IMG/pokemonTypes/Poison.png';
-            break;
-        case data = "ghost":
-            typeImage2.src = './IMG/pokemonTypes/Ghost.png';
-            break;
-        case data = "flying":
-            typeImage2.src = './IMG/pokemonTypes/Flying.png';
-            break;
-        case data = "fighting":
-            typeImage2.src = './IMG/pokemonTypes/Fighting.png';
-            break;
-        case data = "electric":
-            typeImage2.src = './IMG/pokemonTypes/Electric.png';
-            break;
-        case data = "normal":
-            typeImage2.src = './IMG/pokemonTypes/Normal.png';
-            break;
-        case data = "bug":
-            typeImage2.src = './IMG/pokemonTypes/Bug.png';
-            break;
-    }
+    return Type[data];
 }
 
 export function moveTypeSelector(data) {
-    switch (data) {
-        case data = "dragon":
-            return './IMG/moveTypes/Dragon.png';
-        case data = "fire":
-            return './IMG/moveTypes/Fire.png';
-        case data = "water":
-            return './IMG/moveTypes/Water.png';
-        case data = "ground":
-            return './IMG/moveTypes/Ground.png';
-        case data = "rock":
-            return './IMG/moveTypes/Rock.png';
-        case data = "dark":
-            return './IMG/moveTypes/Dark.png';
-        case data = "fairy":
-            return './IMG/moveTypes/Fairy.png';
-        case data = "ice":
-            return './IMG/moveTypes/Ice.png';
-        case data = "grass":
-            return './IMG/moveTypes/Grass.png';
-        case data = "steel":
-            return './IMG/moveTypes/Steel.png';
-        case data = "psychic":
-            return './IMG/moveTypes/Psychic.png';
-        case data = "poison":
-            return './IMG/moveTypes/Poison.png';
-        case data = "ghost":
-            return './IMG/moveTypes/Ghost.png';
-        case data = "flying":
-            return './IMG/moveTypes/Flying.png';
-        case data = "fighting":
-            return './IMG/moveTypes/Fighting.png';
-        case data = "electric":
-            return './IMG/moveTypes/Electric.png';
-        case data = "normal":
-            return './IMG/moveTypes/Normal.png';
-        case data = "bug":
-            return './IMG/moveTypes/Bug.png';
+
+    const moveTypes = {
+        dragon: './IMG/moveTypes/Dragon.png',
+        fire: './IMG/moveTypes/Fire.png',
+        water: './IMG/moveTypes/Water.png',
+        ground: './IMG/moveTypes/Ground.png',
+        rock: './IMG/moveTypes/Rock.png',
+        dark: './IMG/moveTypes/Dark.png',
+        fairy: './IMG/moveTypes/Fairy.png',
+        ice: './IMG/moveTypes/Ice.png',
+        grass: './IMG/moveTypes/Grass.png',
+        steel: './IMG/moveTypes/Steel.png',
+        psychic: './IMG/moveTypes/Psychic.png',
+        poison: './IMG/moveTypes/Poison.png',
+        ghost: './IMG/moveTypes/Ghost.png',
+        flying: './IMG/moveTypes/Flying.png',
+        fighting: './IMG/moveTypes/Fighting.png',
+        electric: './IMG/moveTypes/Electric.png',
+        normal: './IMG/moveTypes/Normal.png',
+        bug: './IMG/moveTypes/Bug.png'
     }
+
+    return moveTypes[data];
 }
