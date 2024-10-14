@@ -13,26 +13,21 @@ echo "PokeScouter";
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="body">
-
-<input type="text" id="pokemonName" placeholder="Enter Pokemon name" style="font-size: 16px; margin-bottom: 2px">
-<button id="fetchPokemon"> fetch Pokemon</button>
+<div style="flex">
+    <input type="text" id="pokemonName" placeholder="Enter Pokemon name" style="font-size: 16px; margin-bottom: 2px">
+    <button id="fetchPokemon"> fetch Pokemon</button>
+</div>
 <button id="prevPokemon"> Prev Pokemon</button>
 <button id="nextPokemon"> Next Pokemon</button>
-<!--<button onclick="scrollDown()"> Scroll Down</button>-->
 
 <br>
 <div>
-    <div style="display: flex; margin-top: 10px">
-        <img src="" alt="Pokemon Sprite" id="pokemonSprite" style="display: none">
-        <!--    <div style="width: 200px; height: 20px; border-style: solid; border-width: 1px">-->
-        <!---->
-        <!--    </div>-->
+    <div style="display: flex; margin-top: 10px; height: 110px">
+        <img src="" alt="Pokemon Sprite" id="pokemonSprite" style="display: none; max-height: 96px">
         <div>
             <a href="https://pokemonshowdown.com" target="_blank">Find me on Showdown @GlaiveVG</a>
-            <h3>Abilities:</h3>
-            <div id="infoCard">
-
-            </div>
+            <div style="font-size: 20px; font-weight: bold">Abilities:</div>
+            <div id="infoCard"></div>
         </div>
     </div>
     <table class="statbarTable">

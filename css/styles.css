@@ -10,11 +10,12 @@
     overflow: visible;
 }
 .movesList {
-    width: 240px;
+    width: 350px;
     height:380px;
     overflow: auto;
 }
 .statbarTable{
+    width: 350px;
     border-radius: 20px;
     background-color: white;
     box-shadow: 4px 4px 5px lightgrey;

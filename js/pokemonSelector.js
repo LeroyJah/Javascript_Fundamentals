@@ -4,6 +4,7 @@ import {setStats} from "./setStatNumbers.js";
 import {setTypes} from "./setPokemonType.v2.js";
 import {createMovesArray} from "./createMovesList.js";
 import {setStatBars} from "./setStatNumbers.js";
+import {setAbilities} from "./setAbilities.js";
 
 
 export let objectArray = [];
@@ -45,4 +46,5 @@ function updateObject(object) {
     setStatBars(object);
     setTypes(object);
     createMovesArray(object);
+    setAbilities(object)
 }
