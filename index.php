@@ -7,14 +7,14 @@ echo "PokeScouter";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+          content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PokeScouter</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="body">
 
-<input type="text" id="pokemonName" placeholder="Enter Pokemon name">
+<input type="text" id="pokemonName" placeholder="Enter Pokemon name" style="font-size: 16px; margin-bottom: 2px">
 <button id="fetchPokemon"> fetch Pokemon</button>
 <button id="prevPokemon"> Prev Pokemon</button>
 <button id="nextPokemon"> Next Pokemon</button>
@@ -29,6 +29,10 @@ echo "PokeScouter";
         <!--    </div>-->
         <div>
             <a href="https://pokemonshowdown.com" target="_blank">Find me on Showdown @GlaiveVG</a>
+            <h3>Abilities:</h3>
+            <div id="infoCard">
+
+            </div>
         </div>
     </div>
     <table class="statbarTable">

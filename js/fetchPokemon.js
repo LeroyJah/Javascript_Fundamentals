@@ -1,9 +1,10 @@
 import {clearInput} from "./clearInputField.js";
 import {setSprite} from "./setPokemonSprite.js";
 import {setStatBars, setStats} from "./setStatNumbers.js";
-import {setTypes} from "./setPokemonType.js";
+import {setTypes} from "./setPokemonType.v2.js";
 import {objectArray, setArrayIndex} from "./pokemonSelector.js";
 import {createMovesArray} from "./createMovesList.js";
+import {setAbilities} from "./setAbilities.js";
 
 let status = false;
 export function fetchPokemon(){
@@ -31,6 +32,7 @@ export function fetchPokemon(){
             }
             setArrayIndex();
             createMovesArray(pokeObject);
+            setAbilities(pokeObject)
             movesTable.scrollTo(500,0)
 
             status = false;

@@ -1,7 +1,7 @@
 //might have to change the name of this file to something that's more explanitory like objectArraySelector
 import {setSprite} from "./setPokemonSprite.js";
 import {setStats} from "./setStatNumbers.js";
-import {setTypes} from "./setPokemonType.js";
+import {setTypes} from "./setPokemonType.v2.js";
 import {createMovesArray} from "./createMovesList.js";
 import {setStatBars} from "./setStatNumbers.js";
 

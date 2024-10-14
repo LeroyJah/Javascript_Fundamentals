@@ -1,4 +1,4 @@
-import {moveTypeSelector} from "./setPokemonType.js";
+import {moveTypeSelector} from "./setPokemonType.v2.js";
 
 const tbody = document.getElementById('tbody')
 
