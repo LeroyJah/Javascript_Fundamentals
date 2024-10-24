@@ -13,15 +13,15 @@ echo "PokeScouter";
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="body">
-<div style="flex">
-    <input type="text" id="pokemonName" placeholder="Enter Pokemon name" style="font-size: 16px; margin-bottom: 2px">
-    <button id="fetchPokemon"> fetch Pokemon</button>
+<div style="display: flex; width: auto">
+    <input type="text" id="pokemonName" placeholder="Enter Pokemon name" style="font-size: 16px; margin-bottom: 2px; margin-right: 2px">
+    <button id="fetchPokemon" style=""> fetch Pokemon</button>
 </div>
 <button id="prevPokemon"> Prev Pokemon</button>
 <button id="nextPokemon"> Next Pokemon</button>
 
 <br>
-<div>
+<div style="width: auto">
     <div style="display: flex; margin-top: 10px; height: 110px">
         <img src="" alt="Pokemon Sprite" id="pokemonSprite" style="display: none; max-height: 96px">
         <div>
@@ -99,6 +99,7 @@ echo "PokeScouter";
                 <tr style="border: 1px solid">
                     <th id="" colspan="">Level</th>
                     <th class="moveTableHead" colspan="">Move</th>
+                    <th id="movePower" colspan="">Power</th>
                     <th id="moveType" colspan="">Type</th>
                 </tr>
             </thead>

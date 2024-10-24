@@ -13,7 +13,7 @@ export function createMovesArray(data) {
                     let movesObject = {
                         level: 0,
                         move: "",
-                        power:"",
+                        power:0,
                         type: ""
                     };
 
@@ -23,6 +23,7 @@ export function createMovesArray(data) {
                         .then(responseObject => responseObject.json())
                         .then(function (responseObject) {
                             movesObject.type = responseObject.type.name
+                            movesObject.power = responseObject.power
                             movesArray.push(movesObject)
                             movesArray.sort((a, b) =>
                                 a.level - b.level
@@ -40,11 +41,13 @@ function setMovesTable(movesArray){
     var moveLevel = 0;
     var moveString = "";
     let moveType = "";
+    let movePower = 0;
 
     for(let i = 0; i < movesArray.length; ++i){
         moveLevel = movesArray[i].level
         moveString = movesArray[i].move
         moveType = movesArray[i].type
+        movePower = movesArray[i].power
 
         moveLevel = `<td>${moveLevel}</td>`;
 
@@ -54,6 +57,10 @@ function setMovesTable(movesArray){
             document.createElement('td');
         var createTableData2 =
             document.createElement('td');
+        var createTableData3 =
+            document.createElement('td');
+        var createTableData4 =
+            document.createElement('td');
         var createTableImage =
             document.createElement('img');
 
@@ -61,9 +68,16 @@ function setMovesTable(movesArray){
         createTableData.innerHTML = moveString
         createTableImage.src = moveTypeSelector(moveType)
         createTableData2.appendChild(createTableImage)
+        createTableData3.innerHTML = movePower
+        createTableData4.innerHTML = "-"
 
         tbody.appendChild(createTableRow)
         createTableRow.appendChild(createTableData)
+        if(movesArray[i].power !== null){
+            createTableRow.appendChild(createTableData3)
+        }else{
+            createTableRow.appendChild(createTableData4)
+        }
         createTableRow.appendChild(createTableData2)
     }
 }
