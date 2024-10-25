@@ -38,18 +38,9 @@ export function createMovesArray(data) {
 
     }
 function setMovesTable(movesArray){
-    var moveLevel = 0;
-    var moveString = "";
-    let moveType = "";
-    let movePower = 0;
 
     for(let i = 0; i < movesArray.length; ++i){
-        moveLevel = movesArray[i].level
-        moveString = movesArray[i].move
-        moveType = movesArray[i].type
-        movePower = movesArray[i].power
-
-        moveLevel = `<td>${moveLevel}</td>`;
+        var moveLevel = `<td>${movesArray[i].level}</td>`;
 
         var createTableRow =
             document.createElement('tr');
@@ -65,20 +56,21 @@ function setMovesTable(movesArray){
             document.createElement('img');
 
         createTableRow.innerHTML = moveLevel
-        createTableData.innerHTML = moveString
-        createTableImage.src = moveTypeSelector(moveType)
-        createTableData2.appendChild(createTableImage)
-        createTableData3.innerHTML = movePower
-        createTableData4.innerHTML = "-"
+        createTableData.innerHTML = movesArray[i].move
+        createTableData2.innerHTML = movesArray[i].power
+        createTableData3.innerHTML = "-"
+
+        createTableImage.src = moveTypeSelector(movesArray[i].type)
+        createTableData4.appendChild(createTableImage)
 
         tbody.appendChild(createTableRow)
         createTableRow.appendChild(createTableData)
         if(movesArray[i].power !== null){
-            createTableRow.appendChild(createTableData3)
+            createTableRow.appendChild(createTableData2)
         }else{
-            createTableRow.appendChild(createTableData4)
+            createTableRow.appendChild(createTableData3)
         }
-        createTableRow.appendChild(createTableData2)
+        createTableRow.appendChild(createTableData4)
     }
 }
 
