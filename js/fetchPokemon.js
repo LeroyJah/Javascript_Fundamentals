@@ -5,6 +5,7 @@ import {setTypes} from "./setPokemonType.v2.js";
 import {objectArray, setArrayIndex} from "./pokemonSelector.js";
 import {createMovesArray} from "./createMovesList.js";
 import {setAbilities} from "./setAbilities.js";
+import {createMovesArray_2} from "./createMovesList_2.js";
 
 let status = false;
 export function fetchPokemon(){
@@ -32,6 +33,7 @@ export function fetchPokemon(){
             }
             setArrayIndex();
             createMovesArray(pokeObject);
+            createMovesArray_2(pokeObject);
             setAbilities(pokeObject)
             movesTable.scrollTo(500,0)
 

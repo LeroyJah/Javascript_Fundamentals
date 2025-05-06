@@ -2,14 +2,14 @@ import {moveTypeSelector} from "./setPokemonType.v2.js";
 
 const tbody = document.getElementById('tbody')
 
-export function createMovesArray(data) {
-
+export function createMovesArray_2(data) {
+    console.log('createMovesArray_2 activated');
     var moves = data.moves
     var movesArray = [];
 
     for(let i = 0; i < moves.length; i++){ //loop to go through every move known to said pokemon
         for(let j = 0; j < moves[i].version_group_details.length; j++){//loop to go through every iteration of said move
-            if(data.moves[i].version_group_details[j].version_group.name == "firered-leafgreen"){
+            if(data.moves[i].version_group_details[j].version_group.name == "black-2-white-2"){
                 if(data.moves[i].version_group_details[j].level_learned_at > 0){//if-statement for moves learned by level-up only
                     let movesObject = {
                         level: 0,
