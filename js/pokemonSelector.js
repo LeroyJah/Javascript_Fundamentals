@@ -46,6 +46,5 @@ function updateObject(object) {
     setStatBars(object);
     setTypes(object);
     createMovesArray(object);
-
     setAbilities(object)
 }
