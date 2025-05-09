@@ -109,18 +109,20 @@ echo "PokeScouter";
             </tbody>
         </table>
     </div>
-    <div style="margin-top: 40px; height:95px; background:white; border-radius: 20px; padding:10px; box-shadow: 4px 4px 5px lightgrey;">
+    <div style="margin-top: 40px; height:115px; background:white; border-radius: 20px; padding:10px; box-shadow: 4px 4px 5px lightgrey;">
         <form action="">
-            <input type="radio" id="1" name="generation|" value="1" checked>
+            <input type="radio" id="1" name="generation" value="1" checked>
             <label for="1">red-blue</label><br>
-            <input type="radio" id="2" name="generation||" value="2">
+            <input type="radio" id="2" name="generation" value="2">
             <label for="2"></label>gold-silver<br>
-            <input type="radio" id="3" name="generation|||" value="3">
+            <input type="radio" id="3" name="generation" value="3">
             <label for="3"></label>ruby-sapphire<br>
-            <input type="radio" id="4" name="generation|V" value="4">
-            <label for="4"></label>diamond-pearl<br>
-            <input type="radio" id="5" name="generationV" value="5">
-            <label for="5"></label>black2-white2<br>
+            <input type="radio" id="4" name="generation" value="4">
+            <label for="4"></label>firered-leafgreen<br>
+            <input type="radio" id="5" name="generation" value="5">
+            <label for="5"></label>diamond-pearl<br>
+            <input type="radio" id="6" name="generation" value="6">
+            <label for="6"></label>black2-white2<br>
         </form>
     </div>
 </div>
