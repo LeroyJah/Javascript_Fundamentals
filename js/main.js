@@ -40,5 +40,7 @@
     });
 
     radioButtons.addEventListener('change',function(e){
-        radioCheck()
+        if(e.target.name === 'generation'){
+            console.log(e.target.value);
+        }
     });
