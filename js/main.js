@@ -16,7 +16,9 @@
     const fetchPokemonButton = document.getElementById("fetchPokemon")
     const prevPokemonButton = document.getElementById("prevPokemon")
     const nextPokemonButton = document.getElementById("nextPokemon")
-    const radioButtons = document.getElementsByName("generation");
+    // const radioButtons = document.querySelectorAll('input[name="generation"]');
+    // const radioButtons = document.getElementsByName("generation");
+    const radioButtons = document.getElementById("radioDiv");
 
     //Event Listeners
     inputField.addEventListener('keypress', function(e){
@@ -34,10 +36,9 @@
     });
     nextPokemonButton.addEventListener('click', function (e){
         nextObject()
+        console.log(radioButtons)
     });
 
     radioButtons.addEventListener('change',function(e){
         radioCheck()
-    }
-
-    )
+    });

@@ -108,7 +108,7 @@ echo "PokeScouter";
             </table>
         </div>
         <div>
-            <div style="margin-top: 40px; height:115px; background:white; border-radius: 20px; padding:10px; box-shadow: 4px 4px 5px lightgrey;">
+            <div id="radioDiv" style="margin-top: 40px; height:115px; background:white; border-radius: 20px; padding:10px; box-shadow: 4px 4px 5px lightgrey;">
                 <form action="">
                     <input type="radio" id="1" name="generation" value="1" checked>
                     <label for="1">red-blue</label><br>
