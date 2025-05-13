@@ -25,7 +25,6 @@ export function setAbilities(data){
         fetch(data.ability.url)
             .then(object => object.json())
             .then(function (object) {
-                console.log(object.generation.name)
                     if(object.generation.name === "generation-iii"){
                         node.appendChild(genIII)
                     }

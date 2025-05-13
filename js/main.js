@@ -1,7 +1,7 @@
     //Modules import
     import {prevObject,nextObject} from "./pokemonSelector.js";
     import {fetchPokemon} from "./fetchPokemon.js";
-    import { radioCheck } from "./RadioButton.js";
+    import { radioCheck, currentRadio } from "./RadioButton.js";
 
     //DOM elements
     var pokemonType1 = document.getElementById("pokemonType1");
@@ -17,18 +17,22 @@
     const prevPokemonButton = document.getElementById("prevPokemon")
     const nextPokemonButton = document.getElementById("nextPokemon")
     // const radioButtons = document.querySelectorAll('input[name="generation"]');
-    // const radioButtons = document.getElementsByName("generation");
+    const currentRadioValue = document.getElementsByName("generation");
     const radioButtons = document.getElementById("radioDiv");
 
     //Event Listeners
     inputField.addEventListener('keypress', function(e){
         if (e.key === 'Enter'){
-            fetchPokemon()
+            let gen = currentRadio(currentRadioValue)
+            console.log(gen);
+            fetchPokemon(gen)
         }
     })
     fetchPokemonButton.addEventListener('click',function (e){
         if (inputField.value !== ""){
-            fetchPokemon()
+            let gen = currentRadio(currentRadioValue)
+            console.log(gen);
+            fetchPokemon(gen)
         }
     });
     prevPokemonButton.addEventListener('click', function (e){
@@ -36,7 +40,6 @@
     });
     nextPokemonButton.addEventListener('click', function (e){
         nextObject()
-        console.log(radioButtons)
     });
 
     radioButtons.addEventListener('change',function(e){

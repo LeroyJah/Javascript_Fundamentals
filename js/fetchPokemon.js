@@ -8,7 +8,7 @@ import {setAbilities} from "./setAbilities.js";
 import {createMovesArray_2} from "./createMovesList_2.js";
 
 let status = false;
-export function fetchPokemon(){
+export function fetchPokemon(gen){
     let pokemonName = document.getElementById("pokemonName").value.toLowerCase();
     //i should add a rule so that empty space around the string gets removed
 
@@ -32,8 +32,7 @@ export function fetchPokemon(){
                 console.log(objectArray)
             }
             setArrayIndex();
-            createMovesArray(pokeObject);
-            createMovesArray_2(pokeObject);
+            createMovesArray(pokeObject,gen);
             setAbilities(pokeObject)
             movesTable.scrollTo(500,0)
 
