@@ -5,6 +5,7 @@ import {setTypes} from "./setPokemonType.v2.js";
 import {createMovesArray} from "./createMovesList.js";
 import {setStatBars} from "./setStatNumbers.js";
 import {setAbilities} from "./setAbilities.js";
+import {gen} from "./main.js"; 
 
 
 export let objectArray = [];
@@ -41,10 +42,11 @@ function setNewObject(){
     currentObject = objectArray[currentArrayIndex];
 }
 function updateObject(object) {
+    console.log(gen);
     setSprite(object);
     setStats(object);
     setStatBars(object);
     setTypes(object);
-    createMovesArray(object);
+    createMovesArray(object,gen);
     setAbilities(object)
 }

@@ -16,9 +16,11 @@
     const fetchPokemonButton = document.getElementById("fetchPokemon")
     const prevPokemonButton = document.getElementById("prevPokemon")
     const nextPokemonButton = document.getElementById("nextPokemon")
+    
     // const radioButtons = document.querySelectorAll('input[name="generation"]');
     const currentRadioValue = document.getElementsByName("generation");
     const radioButtons = document.getElementById("radioDiv");
+    export let gen = currentRadio(currentRadioValue);
 
     //Event Listeners
     inputField.addEventListener('keypress', function(e){
