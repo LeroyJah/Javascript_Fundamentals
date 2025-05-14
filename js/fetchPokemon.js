@@ -27,7 +27,7 @@ export function fetchPokemon(gen){
             setStatBars(pokeObject);
             setTypes(pokeObject);
             if(status) {
-                objectArray.push(pokeObject);
+                objectArray.push([pokeObject,gen]);
                 console.log(objectArray)
             }
             setArrayIndex();

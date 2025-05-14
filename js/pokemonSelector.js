@@ -6,6 +6,7 @@ import {createMovesArray} from "./createMovesList.js";
 import {setStatBars} from "./setStatNumbers.js";
 import {setAbilities} from "./setAbilities.js";
 import {gen} from "./main.js"; 
+import { radioCheck2 } from "./RadioButton.js";
 
 
 export let objectArray = [];
@@ -42,11 +43,13 @@ function setNewObject(){
     currentObject = objectArray[currentArrayIndex];
 }
 function updateObject(object) {
-    console.log(gen);
-    setSprite(object);
-    setStats(object);
-    setStatBars(object);
-    setTypes(object);
-    createMovesArray(object,gen);
-    setAbilities(object)
+    setSprite(object[0]);
+    setStats(object[0]);
+    setStatBars(object[0]);
+    setTypes(object[0]);
+    createMovesArray(object[0],object[1]);
+    setAbilities(object[0])
+
+    // radioCheck(object)
+    radioCheck2(object[1])
 }

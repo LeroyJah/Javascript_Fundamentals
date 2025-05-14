@@ -125,6 +125,7 @@ echo "PokeScouter";
                 </form>
             </div>
             <div id="radioDisplay" style="margin-top: 20px; height: 20px; background: white; border-radius: 20px; box-shadow: 4px 4px 5px lightgrey; text-align: center; padding:2px"></div>
+            <div id="radioDisplay2" style="margin-top: 20px; height: 20px; background: white; border-radius: 20px; box-shadow: 4px 4px 5px lightgrey; text-align: center; padding:2px"></div>
         </div>
     </div>
     <script type="module" src="js/main.js"></script>
