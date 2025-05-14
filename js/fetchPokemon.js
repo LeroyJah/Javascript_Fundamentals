@@ -5,7 +5,6 @@ import {setTypes} from "./setPokemonType.v2.js";
 import {objectArray, setArrayIndex} from "./pokemonSelector.js";
 import {createMovesArray} from "./createMovesList.js";
 import {setAbilities} from "./setAbilities.js";
-import {createMovesArray_2} from "./createMovesList_2.js";
 
 let status = false;
 export function fetchPokemon(gen){

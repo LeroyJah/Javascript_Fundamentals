@@ -24,14 +24,12 @@
     inputField.addEventListener('keypress', function(e){
         if (e.key === 'Enter'){
             let gen = currentRadio(currentRadioValue)
-            console.log(gen);
             fetchPokemon(gen)
         }
     })
     fetchPokemonButton.addEventListener('click',function (e){
         if (inputField.value !== ""){
             let gen = currentRadio(currentRadioValue)
-            console.log(gen);
             fetchPokemon(gen)
         }
     });

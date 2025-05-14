@@ -1,8 +1,7 @@
 const radioTextBox = document.getElementById("radioDisplay");
-let generation = ["red-blue","gold-silver","ruby-sapphire","firered-leafgreen","diamond-pearl","black2-white2"]
 
 export function radioCheck(gen){
-    radioTextBox.innerHTML = generation[gen-1];
+    radioTextBox.innerHTML = gen;
 }
 
 export function currentRadio(radios){

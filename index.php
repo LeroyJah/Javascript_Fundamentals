@@ -110,17 +110,17 @@ echo "PokeScouter";
         <div>
             <div id="radioDiv" style="margin-top: 40px; height:115px; background:white; border-radius: 20px; padding:10px; box-shadow: 4px 4px 5px lightgrey;">
                 <form action="">
-                    <input type="radio" id="1" name="generation" value="1" checked>
+                    <input type="radio" id="1" name="generation" value="red-blue" checked>
                     <label for="1">red-blue</label><br>
-                    <input type="radio" id="2" name="generation" value="2">
+                    <input type="radio" id="2" name="generation" value="gold-silver">
                     <label for="2"></label>gold-silver<br>
-                    <input type="radio" id="3" name="generation" value="3">
+                    <input type="radio" id="3" name="generation" value="ruby-sapphire">
                     <label for="3"></label>ruby-sapphire<br>
-                    <input type="radio" id="4" name="generation" value="4">
+                    <input type="radio" id="4" name="generation" value="firered-leafgreen">
                     <label for="4"></label>firered-leafgreen<br>
-                    <input type="radio" id="5" name="generation" value="5">
+                    <input type="radio" id="5" name="generation" value="diamond-pearl">
                     <label for="5"></label>diamond-pearl<br>
-                    <input type="radio" id="6" name="generation" value="6">
+                    <input type="radio" id="6" name="generation" value="black-2-white-2">
                     <label for="6"></label>black2-white2<br>
                 </form>
             </div>

@@ -6,11 +6,10 @@ export function createMovesArray(data,gen) {
 
     var moves = data.moves
     var movesArray = [];
-    var generation = ["red-blue","gold-silver","ruby-sapphire","firered-leafgreen","diamond-pearl","black2-white2"];
 
     for(let i = 0; i < moves.length; i++){ //loop to go through every move known to said pokemon
         for(let j = 0; j < moves[i].version_group_details.length; j++){//loop to go through every iteration of said move
-            if(data.moves[i].version_group_details[j].version_group.name == generation[gen-1]){
+            if(data.moves[i].version_group_details[j].version_group.name == gen){
                 if(data.moves[i].version_group_details[j].level_learned_at > 0){//if-statement for moves learned by level-up only
                     let movesObject = {
                         level: 0,
