@@ -122,7 +122,11 @@ echo "PokeScouter";
                     <input type="radio" id="6" name="generation" value="black-2-white-2">
                     <label for="6"></label>black2-white2<br>
             </div>
-            <div id="radioDisplay2" style="margin: 20px 0px 0px 5px; height: 20px; background: white; border-radius: 20px; box-shadow: 4px 4px 5px lightgrey; text-align: center; padding:2px;"></div>
+            <div id="radioDisplay2" style="margin: 20px 0px 20px 5px; height: 20px; background: white; border-radius: 20px; box-shadow: 4px 4px 5px lightgrey; text-align: center; padding:2px;">
+            </div>
+            <div id="genImageHolder" style="margin-left: 5px; height: 100px; background: white; border-radius: 20px; box-shadow: 4px 4px 5px lightgrey;">
+
+            </div>
         </div>
     </div>
     <script type="module" src="js/main.js"></script>
