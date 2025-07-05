@@ -13,13 +13,18 @@ echo "PokeScouter";
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="body">
-    <div style="display: flex; width: auto">
-        <input type="text" id="pokemonName" placeholder="Enter Pokemon name" style="font-size: 16px; margin-bottom: 2px; margin-right: 2px">
-        <button id="fetchPokemon" style=""> fetch Pokemon</button>
+    <div style="max-width: 350px; display: flex">
+        <div style="display: flex; flex-direction: column;">
+            <input type="text" id="pokemonName" placeholder="Enter Pokemon name" style="font-size: 16px; margin-bottom: 5px;">
+            <div style="display: flex; justify-content: space-between">
+                <button id="prevPokemon"> Prev Pokemon</button>
+                <button id="nextPokemon"> Next Pokemon</button>
+            </div>
+        </div>
+        <div>
+            <button id="fetchPokemon" style="margin-left: 5px"> fetch Pokemon</button>
+        </div>
     </div>
-    <button id="prevPokemon"> Prev Pokemon</button>
-    <button id="nextPokemon"> Next Pokemon</button>
-    <br>
     <div style="width: auto">
         <div style="display: flex; margin-top: 10px; height: 110px">
             <img src="" alt="Pokemon Sprite" id="pokemonSprite" style="display: none; max-height: 96px">
